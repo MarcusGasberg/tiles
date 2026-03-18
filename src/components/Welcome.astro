@@ -14,7 +14,9 @@ const seed = Math.round(Math.random() * 10 + 200);
     <div class:list={['group', {'scroll-down': col % 2 === 0 , 'scroll-up': col % 2 !== 0  } ]}>
       {images.map(i => (
       <div class="card">
-        <img height={imageSpecs.height} src=`https://picsum.photos/seed/${seed * col + i }/${imageSpecs.width}/${imageSpecs.height}` />
+        <a href=`https://picsum.photos/seed/${seed * col + i }/${imageSpecs.width}/${imageSpecs.height}`>
+          <img height={imageSpecs.height} src=`https://picsum.photos/seed/${seed * col + i }/${imageSpecs.width}/${imageSpecs.height}` />
+        </a>
       </div>
       ))}
     </div>
@@ -23,7 +25,9 @@ const seed = Math.round(Math.random() * 10 + 200);
     <div class:list={['group', {'scroll-down': col % 2 === 0 , 'scroll-up': col % 2 !==0 } ]} aria-hidden="true">
       {images.map(i => (
       <div class="card">
-        <img height={imageSpecs.height} src=`https://picsum.photos/seed/${seed * col + i }/${imageSpecs.width}/${imageSpecs.height}` />
+        <a href=`https://picsum.photos/seed/${seed * col + i }/${imageSpecs.width}/${imageSpecs.height}`>
+          <img height={imageSpecs.height} src=`https://picsum.photos/seed/${seed * col + i }/${imageSpecs.width}/${imageSpecs.height}` />
+        </a>
       </div>
       ))}
     </div>
