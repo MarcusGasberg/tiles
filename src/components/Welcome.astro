@@ -41,21 +41,6 @@ const seed = Math.round(Math.random() * 10 + 200);
     }
   }
 
-  .card {
-    display: flex;
-    width: 100%;
-    border-radius: 1rem;
-    box-sizing: border-box;
-
-    img {
-      border-radius: 1rem;
-      transition: transform 0.3s ease;
-    }
-
-    img:hover {
-      transform: scale(1.02);
-    }
-  }
 
   .group {
     display: flex;
@@ -96,6 +81,52 @@ const seed = Math.round(Math.random() * 10 + 200);
 
     to {
       transform: translateY(-100%);
+    }
+  }
+
+  @keyframes scroll-right {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes scroll-left {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+
+  @media (max-width: 768px) {
+    #container {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(4, 1fr);
+      height: 100dvh;
+      width: 200dvw;
+    }
+
+    .col {
+      display: flex;
+      flex-direction: row;
+    }
+
+    .group {
+      flex-direction: row;
+      margin-bottom: 0;
+      margin-right: 1rem;
+    }
+
+    .scroll-down {
+      animation-name: scroll-right;
+    }
+
+    .scroll-up {
+      animation-name: scroll-left;
     }
   }
 </style>

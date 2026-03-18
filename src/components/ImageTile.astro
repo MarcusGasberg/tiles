@@ -26,5 +26,12 @@ const link = `https://picsum.photos/seed/${seed * col + index}/${width}/${height
       transform: scale(1.02);
     }
   }
+
+  @media (max-width: 768px) {
+    .card img {
+      width: 150px;
+      height: auto;
+    }
+  }
 </style>
 
