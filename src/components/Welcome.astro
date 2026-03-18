@@ -34,6 +34,9 @@ const seed = Math.round(Math.random() * 10 + 200);
     grid-template-columns: repeat(6, 300px);
     gap: 1rem;
     overflow: hidden;
+    @media (max-width: 768px) {
+      overflow-y: auto;
+    }
     height: 200dvh;
 
     > * {
