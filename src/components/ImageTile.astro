@@ -1,0 +1,30 @@
+---
+const { seed, height, width, col, index } = Astro.props;
+const link = `https://picsum.photos/seed/${seed * col + index}/${width}/${height}`;
+---
+
+
+<div class="card">
+  <a href={link}>
+    <img height={height} src={link} />
+  </a>
+</div>
+
+<style>
+  .card {
+    display: flex;
+    width: 100%;
+    border-radius: 1rem;
+    box-sizing: border-box;
+
+    img {
+      border-radius: 1rem;
+      transition: transform 0.3s ease;
+    }
+
+    img:hover {
+      transform: scale(1.02);
+    }
+  }
+</style>
+
